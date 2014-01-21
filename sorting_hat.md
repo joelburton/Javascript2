@@ -4,9 +4,9 @@ Sorting Hat
 Open up sorting_hat.html. It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things:
 
 First, let's take inventory of the things we need:  
-We need to know how many people we'll be sorting, so we can sort them evenly  
-We need the names of the students who are being sorted  
-We need places to put them after having been sorted  
+- We need to know how many people we'll be sorting, so we can sort them evenly  
+- We need the names of the students who are being sorted  
+- We need places to put them after having been sorted  
 
 Since we need to gather some information, let's put a form on the page. Since this form doesn't have to submit anywhere, we don't want an actual `form` tag. 
 Add a `div` somewhere in the container, give it the `class` of `form`. 
