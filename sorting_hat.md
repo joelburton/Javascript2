@@ -11,11 +11,13 @@ First, let's take inventory of the things we need:
 Since we need to gather some information, let's put a form on the page. Since this form doesn't have to submit anywhere, we don't want an actual `form` tag. 
 Add a `div` somewhere in the container, give it the `class` of `form`. 
 
-Inside the `div`, put an `input` tag, and a `button`. Give them both IDs.
+Inside the `div`, put an `input` tag, another `div`, and a `button`. Give them all IDs.
 ```html
-
-	<input type="number" id="student_count">  
-	<button id="set_student_count">Set Student Count</button>  
+	<div>
+		<input type="number" id="student_count">  
+		<button id="set_student_count">Set Student Count</button>  
+		<div id="count"></div>
+	</div>
 ```
 Next, we're going to practice button-clicking actions that modify the page.
 
@@ -50,6 +52,8 @@ Now, within that function, let's tell it what to do.
 	button.addEventListener('click', function(){
 		//assign the value of document.getElementById("student_count").value to a variable
 		// add the value to the variable we were using earlier
+		// find the 'count' div in the DOM (use getElementById again)
+		//write the current count to the 'count' div (use countDiv.innerHTML)
 		//clear the input box
 	})
 ```
@@ -65,6 +69,7 @@ Instructions:
 - Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house.  
 - If the house is full, make sure you pick a new house.  
 - Put the student into the house you picked, by displaying the student's name inside the house  
+- Decrement the count of students from the count div.
 
 Bonus:  
 - Show the sorting hat, as well as the student's name, al la: "Stella LeFevre: Gryffindor!!"  
