@@ -60,15 +60,15 @@ Next, we're going to do that again, but in a more complicated way.
 We need to add another input field and button, but this time the type will be `text`, and the button will say "Sort!"
 
 Instructions:  
-	Take the value from the student name input field  
-	Pick a house at random  
-	Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house.  
-		If the house is full, make sure you pick a new house.  
-	Put the student into the house you picked, by displaying the student's name inside the house  
+	*Take the value from the student name input field  
+	*Pick a house at random  
+	*Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house.  
+		*If the house is full, make sure you pick a new house.  
+	*Put the student into the house you picked, by displaying the student's name inside the house  
 
 Bonus:  
-	Show the sorting hat, as well as the student's name, al la: "Stella LaFevre: Gryffindor!!"  
-	Turn house names green as they get full  
-	Display a random quote from the sorting hat that goes with the house it's saying (or make up hilarious new ones)  
-	Once you've sorted all the students, display a gif and get rid of the input field.  
+	*Show the sorting hat, as well as the student's name, al la: "Stella LaFevre: Gryffindor!!"  
+	*Turn house names green as they get full  
+	*Display a random quote from the sorting hat that goes with the house it's saying (or make up hilarious new ones)  
+	*Once you've sorted all the students, display a gif and get rid of the input field.  
 		If we add more students to be sorted, put the input field back.  
