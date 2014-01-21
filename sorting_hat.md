@@ -1,7 +1,7 @@
 Sorting Hat
 ===========
 
-Open up sorting_hat.html. It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things:
+Open up [sorting_hat.html](https://github.com/hackbrightacademy/Javascript2/blob/master/sorting_hat.html). It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things:
 
 First, let's take inventory of the things we need:  
 - We need to know how many people we'll be sorting, so we can sort them evenly  
