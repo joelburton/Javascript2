@@ -12,10 +12,11 @@ Since we need to gather some information, let's put a form on the page. Since th
 Add a `div` somewhere in the container, give it the `class` of `form`. 
 
 Inside the `div`, put an `input` tag, and a `button`. Give them both IDs.
+```html
 
 	<input type="number" id="student_count">  
 	<button id="set_student_count">Set Student Count</button>  
-
+```
 Next, we're going to practice button-clicking actions that modify the page.
 
 First, we're going to create a `<script>` tag - like this: 
