@@ -1,42 +1,73 @@
 Sorting Hat
 ===========
 
-Welcome to our first foray into the DOM! Today, we're going to make ourselves a sorting hat.
+Open up sorting_hat.html. It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things:
 
-Our project starts as most javascript-based projects do, with a webpage. We'll need to do a bit of setup first, so let's create a new HTML page. Call it `sorting_hat.html`.
+First, let's take inventory of the things we need:  
+We need to know how many people we'll be sorting, so we can sort them evenly  
+We need the names of the students who are being sorted  
+We need places to put them after having been sorted  
 
-We're going to need the standard HTML boilerplate - a `head`, a `body`, and an `html` wrapped around them. 
+Since we need to gather some information, let's put a form on the page. Since this form doesn't have to submit anywhere, we don't want an actual `form` tag. 
+Add a `div` somewhere in the container, give it the `class` of `form`. 
 
-Next, we'll need a few components for our sorting hat - we'll need a container `div` to put everything in, first.
+Inside the `div`, put an `input` tag, and a `button`. Give them both IDs.
 
-Next, make a `div` box for each of the houses - Gryffindor, Slytherin, Hufflepuff and Ravenclaw. Put an `h2` into each of the divs with the name of the house, so we know by looking which house is which.
-Visually, we have the houses separated. To javascript though, it's going to be a bit tough to differentiate between all of these divs. Let's give them each an `id`, like so:
- 
-```html
-<div id="gryffindor">
-```
+	<input type="number" id="student_count">  
+	<button id="set_student_count">Set Student Count</button>  
 
-Giving each div as an individual object is easiest when they have a unique ID that makes them different. Any time you want to treat a group of HTML tags programmatically differently, you'll need to give them something that makes them unique.
+Next, we're going to practice button-clicking actions that modify the page.
 
-Once you've made a `div` for each house, we'll need to make two more divs, for the information we're going to take in from the user. 
-The first `div` is for the number of students we need to sort.
-The next `div` is for the name of each student.
-List the houses
+First, we're going to create a `<script>` tag - like this: 
 
-Take in a name (input field)
+	<script type="text/javascript">
+		//Javascript goes here, and runs when the page loads.
+	</script>
 
-Keep the houses somewhere in memory so you can keep track of who is in it
+Next, we need a place to store the information we get from the user. Create a globally scoped variable like this, outside of any functions.
 
-Add an event to the button
+	var studentCount = 0;
 
-	get the name
-	randomly sort the name into a house
-		first make sure the name hasn't been used before
-		then pick a house
-			make sure the house isn't "full" (IE, no more than students in class / num houses)
-		add students name to house
-		display text that they've been added to house
-		clear input field
-	Once number of students in class have been sorted, remove form from page
-	display hats going up gif
+Next, we're going to look at what gets put in the input field and add it to the student count. 
 
+First, we'll need to make something that responds to a button click, but for that we'll need to find the button in the DOM. Good thing we gave it an ID. IDs are supposed to be unique, so we can target single DOM nodes with them.
+
+	var button = document.getElementById("set_student_count");
+	
+Now we can add an event listener
+
+	button.addEventListener(event, function)
+
+The first argument is what event we need to use. It should be "click".  
+The next argument is a function. We can pass it any function by value, or we can write idomatic javascript by declaring a function right then and there.  
+  
+
+	button.addEventListener('click', function(){})
+
+Now, within that function, let's tell it what to do.
+
+	button.addEventListener('click', function(){
+		//assign the value of document.getElementById("student_count").value to a variable
+		// add the value to the variable we were using earlier
+		//clear the input box
+	})
+
+Great! Now we've used a button click to get data out of a form, without having to use a server at all!
+
+Next, we're going to do that again, but in a more complicated way.
+
+We need to add another input field and button, but this time the type will be `text`, and the button will say "Sort!"
+
+Instructions:
+	Take the value from the student name input field  
+	Pick a house at random
+	Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house.
+		If the house is full, make sure you pick a new house.
+	Put the student into the house you picked, by displaying the student's name inside the house
+
+Bonus:
+	Show the sorting hat, as well as the student's name, al la: "Stella LaFevre: Gryffindor!!"
+	Turn house names green as they get full
+	Display a random quote from the sorting hat that goes with the house it's saying (or make up hilarious new ones)
+	Once you've sorted all the students, display a gif and get rid of the input field. 
+		If we add more students to be sorted, put the input field back.
