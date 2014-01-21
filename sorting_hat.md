@@ -59,7 +59,7 @@ Next, we're going to do that again, but in a more complicated way.
 
 We need to add another input field and button, but this time the type will be `text`, and the button will say "Sort!"
 
-Instructions:
+Instructions: 
 	Take the value from the student name input field  
 	Pick a house at random
 	Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house.
