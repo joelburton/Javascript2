@@ -20,39 +20,39 @@ Inside the `div`, put an `input` tag, and a `button`. Give them both IDs.
 Next, we're going to practice button-clicking actions that modify the page.
 
 First, we're going to create a `<script>` tag - like this: 
-
+```html
 	<script type="text/javascript">
 		//Javascript goes here, and runs when the page loads.
 	</script>
-
+```
 Next, we need a place to store the information we get from the user. Create a globally scoped variable like this, outside of any functions.
-
+```javascript
 	var studentCount = 0;
-
+```
 Next, we're going to look at what gets put in the input field and add it to the student count. 
 
 First, we'll need to make something that responds to a button click, but for that we'll need to find the button in the DOM. Good thing we gave it an ID. IDs are supposed to be unique, so we can target single DOM nodes with them.
-
+```javascript
 	var button = document.getElementById("set_student_count");
-	
+```
 Now we can add an event listener
-
+```javascript
 	button.addEventListener(event, function)
-
+```
 The first argument is what event we need to use. It should be "click".  
 The next argument is a function. We can pass it any function by value, or we can write idomatic javascript by declaring a function right then and there.  
   
-
+```javascript
 	button.addEventListener('click', function(){})
-
+```
 Now, within that function, let's tell it what to do.
-
+```javascript
 	button.addEventListener('click', function(){
 		//assign the value of document.getElementById("student_count").value to a variable
 		// add the value to the variable we were using earlier
 		//clear the input box
 	})
-
+```
 Great! Now we've used a button click to get data out of a form, without having to use a server at all!
 
 Next, we're going to do that again, but in a more complicated way.
