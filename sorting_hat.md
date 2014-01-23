@@ -59,7 +59,7 @@ Now, within that function, let's tell it what to do.
 ```
 Great! Now we've used a button click to get data out of a form, without having to use a server at all!
 
-Next, we're going to do that again, but in a more complicated way.
+Next, we're going to do that again, but this time we're going to be collecting student names, and sorting them.
 
 We need to add another input field and button, but this time the type will be `text`, and the button will say "Sort!"
 
