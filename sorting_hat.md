@@ -76,4 +76,4 @@ Bonus:
 - Turn house names green as they get full  
 - Display a random quote from the sorting hat that goes with the house it's saying (or make up hilarious new ones)  
 - Once you've sorted all the students, display a gif and get rid of the input field.  
-		If we add more students to be sorted, put the input field back.  
+- If we add more students to be sorted, put the input field back.  
