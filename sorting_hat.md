@@ -13,7 +13,7 @@ Add a `div` somewhere in the container, give it the `class` of `form`.
 
 Inside the `div`, put an `input` tag, another `div`, and a `button`. Give them all IDs.
 ```html
-	<div>
+	<div class="form">
 		<input type="number" id="student_count">  
 		<button id="set_student_count">Set Student Count</button>  
 		<div id="count"></div>
@@ -67,10 +67,10 @@ Instructions:
 - Take the value from the student name input field  
 - Pick a house at random  
 - Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house. (Protip: document.getElementsByClassName() will help you here )
-- If the house is full, make sure you pick a new house.  
+- If the house is full, make sure you pick a new house, and do the same checks.  
 - Put the student into the house you picked, by displaying the student's name inside the house  
-- Decrement the count of students from the count div.
-
+- Decrement the count of students from the count div.  
+ 
 Bonus:  
 - Show the sorting hat, as well as the student's name, al la: "Stella LeFevre: Gryffindor!!"  
 - Turn house names green as they get full  
