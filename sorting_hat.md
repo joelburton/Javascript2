@@ -1,14 +1,18 @@
 Sorting Hat
 ===========
 
-Open up [sorting_hat.html](https://github.com/hackbrightacademy/Javascript2/blob/master/sorting_hat.html). It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things:
+###Step 0 - In which we set up our Template ###
+Open up [sorting_hat.html](https://github.com/hackbrightacademy/Javascript2/blob/master/sorting_hat.html). It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things.
 
+
+###Step 1 - In which information is gathered, and events are briefly mentioned###
 First, let's take inventory of the things we need:  
 - We need to know how many people we'll be sorting, so we can sort them evenly  
 - We need the names of the students who are being sorted  
 - We need places to put them after having been sorted  
 
-Since we need to gather some information, let's put a form on the page. Since this form doesn't have to submit anywhere, we don't want an actual `form` tag. 
+Since we need to gather some information, let's put a form on the page. **_Since this form doesn't have to submit anywhere, we don't want an actual `form` tag_**. If we *did* add a form tag, it would submit the page to itself, instead of activating our cool JS event. We don't want that.  
+  
 Add a `div` somewhere in the container, give it the `class` of `form`. 
 
 Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Give them all IDs.
@@ -21,45 +25,55 @@ Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Giv
 ```
 Next, we're going to practice button-clicking actions that modify the page.
 
-First, we're going to create a `<script>` tag - like this: 
+###Step 2 - In which Javascript is written, and certain events transpire ###
+To start, we're going to create a `<script>` tag - like this: 
 ```html
 	<script type="text/javascript">
 		//Javascript goes here, and runs when the page loads.
 	</script>
 ```
+
 Next, we need a place to store the information we get from the user. Create a globally scoped variable like this, outside of any functions.
 ```javascript
 	var studentCount = 0;
 ```
-Next, we're going to look at what gets put in the input field and add it to the student count. 
+Now let's look at what gets put in the input field and add it to the student count. 
 
-First, we'll need to make something that responds to a button click, but for that we'll need to find the button in the DOM. Good thing we gave it an ID. IDs are supposed to be unique, so we can target single DOM nodes with them.
+To do that, we'll need to make something that responds to a button click, but for that we'll need to **find the button in the DOM**. Good thing we gave it an ID. IDs are supposed to be unique, so we can target single DOM nodes with them.
 ```javascript
 	var button = document.getElementById("set_student_count");
 ```
-Now we can add an event listener
+And now we can spy on our button, by adding event listeners to it. This is similar to a wiretap, only we don't need a warrant to do it. (Ok so it's exactly like a wiretap apparently.)  
+Basically it looks like this:  
 ```javascript
 	button.addEventListener(event, function)
 ```
-The first argument is what event we need to use. It should be "click".  
-The next argument is a function. We can pass it any function by value, or we can write idomatic javascript by declaring a function right then and there.  
+The first argument is a string name of an event we want to listen to. It should be "click" (with the quotes).  
+The second argument is a function. We can pass it any function by value, or we can write idomatic javascript by declaring a function right then and there.  
+
+Here's a function being declared in place:
   
 ```javascript
 	button.addEventListener('click', function(){})
 ```
-Now, within that function, let's tell it what to do.
+
+The next example is more readable.  
+  
+Now, within that function, let's tell it what to do.  
+
+Replace each comment with a line of code:  
 ```javascript
 	button.addEventListener('click', function(){
-		//assign the value of document.getElementById("student_count").value to a variable
-		// add the value to the variable we were using earlier
-		// find the 'count' div in the DOM (use getElementById again)
-		//write the current count to the 'count' div (use countDiv.innerHTML)
-		//clear the input box
+		//get a variable that points to the div that has the count in it
+		//assign the value attribute (document.getElementById("student_count").value) to a variable. Use parseInt if it's blank.
+		// add the value to studentCount, the global variable from before
+		//write the new value to the div we found earlier with the .innerHTML property
+		//reset the input box by changing the .value attribute to 0
 	})
 ```
-Great! Now we've used a button click to get data out of a form, without having to use a server at all!
+Great! Now we've used a button click to get data out of a form and change the page, without having to use a server at all!
 
-Next, we're going to do that again, but this time we're going to be collecting student names, and sorting them.
+We're going to do that again, but this time we're going to be collecting student names, and sorting them.
 
 We need to add another input field and button, but this time the type will be `text`, and the button will say "Sort!"
 
