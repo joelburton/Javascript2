@@ -11,7 +11,7 @@ First, let's take inventory of the things we need:
 Since we need to gather some information, let's put a form on the page. Since this form doesn't have to submit anywhere, we don't want an actual `form` tag. 
 Add a `div` somewhere in the container, give it the `class` of `form`. 
 
-Inside the `div`, put an `input` tag, another `div`, and a `button`. Give them all IDs.
+Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Give them all IDs.
 ```html
 	<div class="form">
 		<input type="number" id="student_count">  
