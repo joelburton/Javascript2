@@ -64,10 +64,10 @@ Now, within that function, let's tell it what to do.
 Replace each comment with a line of code:  
 ```javascript
 	button.addEventListener('click', function(){
-		//get a variable that points to the div that has the count in it
-		//assign the value attribute (document.getElementById("student_count").value) to a variable. Use parseInt if it's blank.
-		// add the value to studentCount, the global variable from before
-		//write the new value to the div we found earlier with the .innerHTML property
+		//get a variable that points to the div that has the count in it by using document.getElementById("student_count")
+		//assign the value attribute (document.getElementById("student_count").value) to a variable. If it's blank, set it to 0.
+		// add the value to studentCount, the global variable we set up earlier.
+		//write the new value of studentCount to the div we found earlier. Use the .innerHTML property
 		//reset the input box by changing the .value attribute to 0
 	})
 ```
