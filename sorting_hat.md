@@ -25,7 +25,7 @@ Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Giv
 ```
 Next, we're going to practice button-clicking actions that modify the page.
 
-###Step 2 - In which Javascript is written, and certain events transpire ###
+###Step 2 - In which Javascript is written, and placed in our page ###
 To start, we're going to create a `<script>` tag - like this: 
 ```html
 	<script type="text/javascript">
@@ -37,19 +37,19 @@ Next, we need a place to store the information we get from the user. Create a gl
 ```javascript
 	var studentCount = 0;
 ```
-Now let's look at what gets put in the input field and add it to the student count. 
+###Step 3 - A button is identified, clicking noises are heard ###
 
 To do that, we'll need to make something that responds to a button click, but for that we'll need to **find the button in the DOM**. Good thing we gave it an ID. IDs are supposed to be unique, so we can target single DOM nodes with them.
 ```javascript
 	var button = document.getElementById("set_student_count");
 ```
-And now we can spy on our button, by adding event listeners to it. This is similar to a wiretap, only we don't need a warrant to do it. (Ok so it's exactly like a wiretap apparently.)  
+And now we can spy on our button, by adding event listeners to it. This is similar to a wiretap, only we don't need a warrant to do it. (Ok so it's exactly like a wiretap these days apparently.)  
 Basically it looks like this:  
 ```javascript
 	button.addEventListener(event, function)
 ```
-The first argument is a string name of an event we want to listen to. It should be "click" (with the quotes).  
-The second argument is a function. We can pass it any function by value, or we can write idomatic javascript by declaring a function right then and there.  
+The **first argument** is a string name of an event we want to listen to. It should be "click" (with the quotes).  
+The **second argument** is a function. We can pass it any function by value, or we can write *idomatic javascript* by declaring a function right then and there.  
 
 Here's a function being declared in place:
   
