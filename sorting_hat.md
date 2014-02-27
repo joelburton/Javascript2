@@ -57,18 +57,18 @@ Here's a function being declared in place:
 	button.addEventListener('click', function(){})
 ```
 
-The next example is more readable.  
+###Step 3 - Events, having transpired, change the nature of the page###
   
-Now, within that function, let's tell it what to do.  
+Open that function up by dropping a few line breaks within it. Inside that function, let's tell it what to do whenever that button gets clicked.  
 
 Replace each comment with a line of code:  
 ```javascript
 	button.addEventListener('click', function(){
-		//get a variable that points to the div that has the count in it by using document.getElementById("student_count")
-		//assign the value attribute (document.getElementById("student_count").value) to a variable. If it's blank, set it to 0.
-		// add the value to studentCount, the global variable we set up earlier.
-		//write the new value of studentCount to the div we found earlier. Use the .innerHTML property
-		//reset the input box by changing the .value attribute to 0
+		//get a variable that points to the div that has the count in it by using document.getElementById("count")
+		//get value of the input box (document.getElementById("student_count").value) - save it to a variable. If it's blank, set it to 0.
+		// add the value to studentCount, the global variable we set up earlier. ( studentCount += some value
+		//write the new value of studentCount to the div we found earlier. Use the .innerHTML property of the #student_count div
+		//reset the input box( by changing the .value attribute to 0
 	})
 ```
 Great! Now we've used a button click to get data out of a form and change the page, without having to use a server at all!
