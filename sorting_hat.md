@@ -1,6 +1,13 @@
 Sorting Hat
 ===========
 
+##Dramatis Persone##
+**The DOM** - Document Object Model  
+`document.getElementById()` - a method for finding things by their IDs  
+`element.addEventListener()` - a method for responding to events  
+**variables** - Various containers for information  
+
+
 ###Step 0 - In which we set up our Template ###
 Open up [sorting_hat.html](https://github.com/hackbrightacademy/Javascript2/blob/master/sorting_hat.html). It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things.
 
