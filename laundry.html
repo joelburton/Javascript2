@@ -15,37 +15,30 @@
   </head>
   <body>
     <h1>Laundry Timers</h1>
+    <div class="form">
+    Washer Time: <input type="number" id="washer_time"> <button id="new_washer">New Washer Load</button>
+    Dryer Time: <input type="number" id="dryer_time"> <button id="new_dryer">New Dryer Load</button>
     
-    <table class="table">
+    <table class="table" id="table">
         <tr>
-            <th>Load ID</th>
             <th>Load Type</th>
             <th>Time Remaining</th>
-            <th>Actions</th>
         </tr>
         <tr>
-            <td>0</td>
-            <td>Washing Machine</td>
+            <td class="type">Washing Machine</td>
             <td class="timer">9:11</td>
-            <td>Buttons go here</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>Washing Machine</td>
+            <td class="type">Washing Machine</td>
             <td class="timer">12:33</td>
-            <td>Buttons go here</td>
         </tr>
         <tr>
-            <td>2</td>
-            <td>Dryer</td>
+            <td class="type">Dryer</td>
             <td class="timer">54:44</td>
-            <td>Buttons go here</td>
         </tr>
         <tr>
-            <td>3</td>
-            <td>Dryer</td>
-            <td class="timer">2:23</td>
-            <td>Buttons go here</td>
+            <td class="type">Dryer</td>
+            <td class="timer">0:03</td>
         </tr>
     </table>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -56,11 +49,51 @@
     //Your JS goes here
 
     //listen to button
-    function button_listener (argument) {
-        //gather params
-        //create table node
-        //set table node
-    }
+    var washer = document.getElementById('new_washer');
+    var dryer = document.getElementById('new_dryer');
+    var table = document.getElementsByTagName('tbody')[0];
+
+    washer.addEventListener('click', function(){
+        var row = document.createElement('tr');
+        var type = document.createElement('td');
+        var timer = document.createElement('td');
+
+
+        //setup type
+        type.className="type";
+        type.innerHTML="Washing Machine"
+
+        //setup timer initial value
+        timer.className="timer";
+        timer.innerHTML = document.getElementById('washer_time').value + ":00"
+
+        row.appendChild(type);
+        row.appendChild(timer);
+
+        table.appendChild(row);
+
+    });
+
+    dryer.addEventListener('click', function(){
+        var row = document.createElement('tr');
+        var type = document.createElement('td');
+        var timer = document.createElement('td');
+
+
+        //setup type
+        type.className="type";
+        type.innerHTML="Dryer"
+
+        //setup timer initial value
+        timer.className="timer";
+        timer.innerHTML = document.getElementById('dryer_time').value + ":00"
+
+        row.appendChild(type);
+        row.appendChild(timer);
+
+        table.appendChild(row);
+
+    });
 
     //decrement counters
     function decrementCounters(){
@@ -78,8 +111,28 @@
             }
             if ((seconds + "").length < 2) {
                 seconds = "0" + seconds + "";
-            } 
+            }
             counterTDs[i].innerHTML = minuites + ":" + seconds;
+        }
+    }
+
+    function alertTimer(){
+        var counterTDs = document.getElementsByClassName('timer');
+        for (var i=0;i<counterTDs.length;i++) {
+            // Get the time
+            var minuites = counterTDs[i].innerHTML.split(":")[0] || "00";
+            var seconds = counterTDs[i].innerHTML.split(":")[1] || "00";
+            if (minuites == "0" && seconds == "00") {
+                counterTDs[i].className = "";
+            }
+        }
+    }
+
+    function toggleTimer(toggle, timerId) {
+        //find timer
+
+        if (toggle == "on") {
+
         }
     }
 
@@ -87,6 +140,7 @@
     //main event loop
     setInterval(function(){
         decrementCounters();
+        alertTimer();
     },1000)
 
     </script>
