@@ -61,7 +61,7 @@ To do that, we'll need to make something that responds to a button click, but fo
 And now we can spy on our button, by adding event listeners to it. This is similar to a wiretap, only we don't need a warrant to do it. (Ok so it's exactly like a wiretap these days apparently.)  
 Basically it looks like this:  
 ```javascript
-	button.addEventListener(event, function)
+	button.addEventListener(event, function);
 ```
 The **first argument** is a string name of an event we want to listen to. It should be "click" (with the quotes).  
 The **second argument** is a function. We can pass it any function by value, or we can write *idomatic javascript* by declaring a function right then and there.  
