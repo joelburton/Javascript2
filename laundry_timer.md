@@ -3,9 +3,9 @@ Laundry Timer
 This is a much more complicated exercise than the previous one. We'll be reintroducing the concept of a main event loop. Rather than waiting for user input however, the main event loop will just run every second. Our functions are going to be executed either in response to events (mouse clicks), or once a second.
 
 ###Dramatis Persone###
-document.getElementsByClassName()  
-element.className  
-document.createElement()  
+[document.getElementsByClassName()](https://developer.mozilla.org/en-US/docs/Web/API/document.getElementsByClassName)  
+[element.className](https://developer.mozilla.org/en-US/docs/Web/API/Element.className)  
+[document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/document.createElement)  
   
 
 ###Table of Concepts###
