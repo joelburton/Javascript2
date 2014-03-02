@@ -69,7 +69,7 @@ The **second argument** is a function. We can pass it any function by value, or 
 Here's a function being declared in place:
   
 ```javascript
-	button.addEventListener('click', function(){})
+	button.addEventListener('click', function(){});
 ```
 
 ###Step 3 - Events, having transpired, change the nature of the page###
@@ -84,7 +84,7 @@ Replace each comment with a line of code:
 		// add the value to studentCount, the global variable we set up earlier. ( studentCount += some value
 		//write the new value of studentCount to the div we found earlier. Use the .innerHTML property of the #student_count div
 		//reset the input box( by changing the .value attribute to 0
-	})
+	});
 ```
 Great! Now we've used a button click to get data out of a form and change the page, without having to use a server at all!
 
