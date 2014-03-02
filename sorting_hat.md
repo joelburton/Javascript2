@@ -1,23 +1,31 @@
 Sorting Hat
 ===========
 
-##Dramatis Persone##
-**The DOM** - Document Object Model  
-`document.getElementById()` - a method for finding things by their IDs  
-`element.addEventListener()` - a method for responding to events  
+###Dramatis Persone###
+[**The DOM**](https://developer.mozilla.org/en-US/docs/Web/API/document) - Document Object Model  
+[`document.getElementById()`](https://developer.mozilla.org/en-US/docs/Web/API/document.getElementById) - a method for finding things by their IDs  
+[`element.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener) - a method for responding to events  
 **variables** - Various containers for information  
+
+###Table of Concepts###
+Starting out with a template  
+Seperating the idea of a form from having to submit to a webserver  
+Interacting with the DOM  
+Event Listeners  
+Modifying the DOM with JavaScript (in response to an event)  
 
 
 ###Step 0 - In which we set up our Template ###
 Open up [sorting_hat.html](https://github.com/hackbrightacademy/Javascript2/blob/master/sorting_hat.html). It's got a basic bootstrap template there for you, so you don't have to look at those ugly default-internet fonts. It doesn't have much else though, so we'll need to add some things.
 
 
-###Step 1 - In which information is gathered, and events are briefly mentioned###
+###Step 1 - In which information is gathered, and a counter is initialized###
 First, let's take inventory of the things we need:  
 - We need to know how many people we'll be sorting, so we can sort them evenly  
 - We need the names of the students who are being sorted  
 - We need places to put them after having been sorted  
 
+Let's start with just the first one, and then you can do the rest yourself.  
 Since we need to gather some information, let's put a form on the page. **_Since this form doesn't have to submit anywhere, we don't want an actual `form` tag_**. If we *did* add a form tag, it would submit the page to itself, instead of activating our cool JS event. We don't want that.  
   
 Add a `div` somewhere in the container, give it the `class` of `form`. 
