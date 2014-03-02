@@ -94,7 +94,7 @@ We need to add another input field and button, but this time the type will be `t
 
 Instructions:  
 - Take the value from the student name input field  
-- Pick a house at random  
+- Pick a house at random (probably keep these in some array or... object?)  
 - Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house. (Protip: `document.getElementsByClassName()` will help you here )
 - If the house is full, make sure you pick a new house, and do the same checks.  
 - Put the student into the house you picked, by displaying the student's name inside the house  
