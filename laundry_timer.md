@@ -1,5 +1,8 @@
 Laundry Timer
 =============
+
+Almost no one has private laundry in SF. Fortunately, most people have a laundromat near enough to their house, and so they leave their laundry there. I usually do multiple loads at once, so I've developed a queueing system to handle it.  
+
 This is a much more complicated exercise than the previous one. We'll be reintroducing the concept of a main event loop. Rather than waiting for user input however, the main event loop will just run every second. Our functions are going to be executed either in response to events (mouse clicks), or once a second.
 
 ###Dramatis Persone###
@@ -13,17 +16,19 @@ Event Loops
 Timers / Intervals  
 Event Listeners  
 DOM Node Creation  
-DOM Tree Manipulation  
-DOM Node Manipulation  
+DOM Tree Manipulation [(The `document` Object)](https://developer.mozilla.org/en-US/docs/Web/API/document)  
+DOM Node Manipulation  [(The `element` Object)](https://developer.mozilla.org/en-US/docs/Web/API/element)  
 
 
-Almost no one has private laundry in SF. Fortunately, most people have a laundromat near enough to their house, and so they leave their laundry there. I usually do multiple loads at once, so I've developed a queueing system to handle it.  
 
+
+Sometimes, when someone in the real world wants some software written, you get a set of requirements. Basically it's just a list of behaviors people want, with a little bit of information about what buttons they're interested in seeing. Sometimes you won't have all the information you need in the requirements, which might require a little bit of freestylin'. Sometimes you'll want to go back and demand more information however, especially when you're a junior developer.  
 ### Requirements:###
 
 - We want to be able to start a timer
-	- The timer's length should be variable depending on whether or not it's a washer or dryer
-	- We should be able to configure how long the washer / dryer goes.
+	- The timer's length should be specified by an input box
+	- We should have an input box for washer length, and dryer length
+	- We should have a button that creates a new load of the specified type
 - We want to be able to have multiple timers going
 - We want to be able to watch the countdown of each timer update
 - Once a timer is done, we want to indicate that it's finished somehow
@@ -59,12 +64,13 @@ The second function needs to be able to stop a timer once it reaches "00:00".
 ### The Event Listeners ###
 
 The third function needs to be able to create a new washing machine row. 
-- Find the 
+- Find the table in the DOM
 - Use `document.createElement('tr')` to create a table row  
 	- This **returns** an element, so put it in a variable.  
 - Use `document.createElement('td')` to create a table column  
 - Set the `.innerHTML` property to be the value from the input tag from before.  
-- Use `variableContainingElement.appendChild(otherElement)` to put the `td`s inside the `tr`.  
+- Use `variableContainingElement.appendChild(otherElement)` to put the `td`s inside the `tr`. 
+- Then, use the same method to append the TR to the table.
 
 The fourth function needs to be able to create a new dryer row.
 - Replicate the functionality from the washer row, but change the type / time.
