@@ -26,7 +26,25 @@
         <tr>
             <td>0</td>
             <td>Washing Machine</td>
-            <td>5:66</td>
+            <td class="timer">9:11</td>
+            <td>Buttons go here</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Washing Machine</td>
+            <td class="timer">12:33</td>
+            <td>Buttons go here</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Dryer</td>
+            <td class="timer">54:44</td>
+            <td>Buttons go here</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Dryer</td>
+            <td class="timer">2:23</td>
             <td>Buttons go here</td>
         </tr>
     </table>
@@ -36,6 +54,41 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     //Your JS goes here
+
+    //listen to button
+    function button_listener (argument) {
+        //gather params
+        //create table node
+        //set table node
+    }
+
+    //decrement counters
+    function decrementCounters(){
+        var counterTDs = document.getElementsByClassName('timer');
+        for (var i=0;i<counterTDs.length;i++) {
+            // Get the time
+            var minuites = counterTDs[i].innerHTML.split(":")[0] || "00";
+            var seconds = counterTDs[i].innerHTML.split(":")[1] || "00";
+            //check to decrement minuites 
+            if (seconds == "00") {
+                minuites--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+            if ((seconds + "").length < 2) {
+                seconds = "0" + seconds + "";
+            } 
+            counterTDs[i].innerHTML = minuites + ":" + seconds;
+        }
+    }
+
+
+    //main event loop
+    setInterval(function(){
+        decrementCounters();
+    },1000)
+
     </script>
   </body>
 </html>
