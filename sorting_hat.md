@@ -1,6 +1,8 @@
 Sorting Hat
 ===========
 
+[The Sorting Hat](http://www.youtube.com/watch?v=hbjksQapIfg) in Harry Potter is magically able to place students in their correct houses.  In this exercise, we're going to build our own version of the sorting hat, but instead of using magic we'll be using the power of Javascript.  Which is sometimes like magic.
+
 ###Dramatis Persone###
 [**The DOM**](https://developer.mozilla.org/en-US/docs/Web/API/document) - Document Object Model  
 [`document.getElementById()`](https://developer.mozilla.org/en-US/docs/Web/API/document.getElementById) - a method for finding things by their IDs  
@@ -8,11 +10,11 @@ Sorting Hat
 **variables** - Various containers for information  
 
 ###Table of Concepts###
-Starting out with a template  
-Seperating the idea of a form from having to submit to a webserver  
-Interacting with the DOM  
-Event Listeners  
-Modifying the DOM with JavaScript (in response to an event)  
+- Starting out with a template  
+- Seperating the idea of a form from having to submit to a webserver  
+- Interacting with the DOM  
+- Event Listeners  
+- Modifying the DOM with JavaScript (in response to an event)  
 
 
 ###Step 0 - In which we set up our Template ###
@@ -28,9 +30,10 @@ First, let's take inventory of the things we need:
 Let's start with just the first one, and then you can do the rest yourself.  
 Since we need to gather some information, let's put a form on the page. **_Since this form doesn't have to submit anywhere, we don't want an actual `form` tag_**. If we *did* add a form tag, it would submit the page to itself, instead of activating our cool JS event. We don't want that.  
   
-Add a `div` somewhere in the container, give it the `class` of `form`. 
+Add a new `div` somewhere inside the container `div`, give it the `class` of `form`. 
 
-Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Give them all IDs.
+Inside that new `div`, put an `input` tag, another (empty) `div` called "count", and a `button`. Give them all IDs.
+
 ```html
 	<div class="form">
 		<input type="number" id="student_count">  
@@ -38,10 +41,12 @@ Inside the `div`, put an `input` tag, another (blank) `div`, and a `button`. Giv
 		<div id="count"></div>
 	</div>
 ```
+The empty div is where we'll be placing a count of the number of students we have sorted so far.  It's content will get filled in by our Javascript code when we place a student.  By placing it in the HMTL now, we've handled the layout and position of counter and we can let our Javascript code focus on the content.
+
 Next, we're going to practice button-clicking actions that modify the page.
 
 ###Step 2 - In which Javascript is written, and placed in our page ###
-To start, we're going to create a `<script>` tag - like this: 
+To start, we're going to create a `<script>` tag where we can place our Javascript code.  At the bottom of the page (at the end of the `body` tag) is a good place: 
 ```html
 	<script type="text/javascript">
 		//Javascript goes here, and runs when the page loads.
@@ -72,18 +77,29 @@ Here's a function being declared in place:
 	button.addEventListener('click', function(){});
 ```
 
-###Step 3 - Events, having transpired, change the nature of the page###
+###Step 4 - Events, having transpired, change the nature of the page###
   
 Open that function up by dropping a few line breaks within it. Inside that function, let's tell it what to do whenever that button gets clicked.  
 
-Replace each comment with a line of code:  
+Add a line of code underneath each comment:  
 ```javascript
 	button.addEventListener('click', function(){
-		//get a variable that points to the div that has the count in it by using document.getElementById("count")
-		//get value of the input box (document.getElementById("student_count").value) - save it to a variable. If it's blank, set it to 0.
-		// add the value to studentCount, the global variable we set up earlier. ( studentCount += some value
-		//write the new value of studentCount to the div we found earlier. Use the .innerHTML property of the #student_count div
-		//reset the input box( by changing the .value attribute to 0
+		// Create a variable that will store the div object where we will display 
+		//  the student count by using document.getElementById("count")
+
+		// Create a variable to store what the user entered into the text input field.
+		//    You can use document.getElementbyId("student_count").value
+		//    If the field is empty (or not a number), set it to 0.
+
+		// Add the user entered value to studentCount (the global variable we set
+		//    up earlier in Step 2).
+
+		// Display the new value of studentCount in the div object (the "count" 
+		//    div) we saved ealier.  Use the .innerHTML property to update the
+		//    contents of the div
+
+		// Reset the input field (student_count) changing the .value attribute to 0
+
 	});
 ```
 Great! Now we've used a button click to get data out of a form and change the page, without having to use a server at all!
@@ -103,6 +119,6 @@ Instructions:
 Bonus:  
 - Show the sorting hat, as well as the student's name, al la: "Stella LeFevre: Gryffindor!!"  
 - Turn house names green as they get full  
-- Display a random quote from the sorting hat that goes with the house it's saying (or make up hilarious new ones)  
-- Once you've sorted all the students, display a gif and get rid of the input field.  
+- Display a random quote from the sorting hat that goes with the house's saying (or make up hilarious new ones)  
+- Once you've sorted all the students, display an image and get rid of (hide) the student input field.  
 - If we add more students to be sorted, put the input field back.  
